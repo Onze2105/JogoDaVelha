@@ -95,5 +95,7 @@ JavaFX
 <img width="383" height="337" alt="image" src="https://github.com/user-attachments/assets/006d2538-0352-432e-b349-9a60d7bf0bb0" />
 <img width="445" height="341" alt="image" src="https://github.com/user-attachments/assets/a913f7ba-17e7-446c-943f-019b3dd26c24" />
 
+### Autor
 
+Onze //_//
 
