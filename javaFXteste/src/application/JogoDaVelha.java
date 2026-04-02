@@ -65,7 +65,7 @@ public class JogoDaVelha extends Application {
         }
     }
     
-    private void aplicarIcone(Alert alert) {
+    private void aplicarIcones(Alert alert) {
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(icone);
     }
@@ -81,7 +81,7 @@ public class JogoDaVelha extends Application {
     		img.setFitHeight(50);
 
     		vitoria.setGraphic(img);
-    	aplicarIcone(vitoria);
+    	aplicarIcones(vitoria);
     	vitoria.setTitle("Vitória!");
         vitoria.setHeaderText("Vitória do " + j + "!");
         vitoria.showAndWait().ifPresent(response ->{
@@ -104,7 +104,7 @@ public class JogoDaVelha extends Application {
     		img.setFitHeight(50);
 
     		empate.setGraphic(img);
-    	aplicarIcone(empate);
+    	aplicarIcones(empate);
     	empate.setTitle("Deu velha!");
     	empate.setHeaderText(null);
     	empate.showAndWait().ifPresent(response ->{
