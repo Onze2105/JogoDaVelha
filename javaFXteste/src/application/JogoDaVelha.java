@@ -21,11 +21,13 @@ public class JogoDaVelha extends Application {
     private String[][] tabuleiro = new String[3][3];
     private boolean turnoX = true;
     private Button[][] botoes;
-
+    private Image icone;
 
     @Override
     public void start(Stage stage) {
-    	stage.getIcons().add(new Image("/tictactoe.png"));
+    	icone = new Image(getClass().getResource("/tictactoe.png").toExternalForm());
+    	stage.getIcons().add(icone);
+    	
     	stage.setResizable(false);
     	stage.setTitle("Jogo da Velha");
     	Label texto = new Label("Bem-vindo ao jogo da velha!");
@@ -63,16 +65,23 @@ public class JogoDaVelha extends Application {
         }
     }
     
+    private void aplicarIcone(Alert alert) {
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(icone);
+    }
+    
     private void PopupVitoria(String j) {
+    	
     	Alert vitoria = new Alert(AlertType.CONFIRMATION, "Deseja jogar de novo?", ButtonType.YES, ButtonType.NO);
     	ImageView img = new ImageView(
     		    new Image(getClass().getResource("/velha.png").toExternalForm())
     		);
-
+    	
     		img.setFitWidth(50);
     		img.setFitHeight(50);
 
     		vitoria.setGraphic(img);
+    	aplicarIcone(vitoria);
     	vitoria.setTitle("Vitória!");
         vitoria.setHeaderText("Vitória do " + j + "!");
         vitoria.showAndWait().ifPresent(response ->{
@@ -95,6 +104,7 @@ public class JogoDaVelha extends Application {
     		img.setFitHeight(50);
 
     		empate.setGraphic(img);
+    	aplicarIcone(empate);
     	empate.setTitle("Deu velha!");
     	empate.setHeaderText(null);
     	empate.showAndWait().ifPresent(response ->{
